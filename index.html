@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-<meta name="google-site-verification" content="3cn-8T-bTTt9K1BbXcQ_y0duOKEBFhgXWoxMXAJyMNg" /> 
-  <title>BonusRadarDE – Beste Boni – täglich aktualisiert </title>
+  <meta name="google-site-verification" content="3cn-8T-bTTt9K1BbXcQ_y0duOKEBFhgXWoxMXAJyMNg" />
+  <title>BonusRadarDE – Beste Boni – täglich aktualisiert</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
@@ -25,8 +25,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #18152f 0, #04030a 55%, #000 100%);
       color: var(--fg);
       min-height: 100vh;
@@ -72,16 +71,6 @@
       color: var(--muted);
     }
 
-    @media (min-width: 768px) {
-      .logo {
-        width: 10rem;
-        height: 10rem;
-      }
-      .subtitle {
-        font-size: 1.15rem;
-      }
-    }
-
     section {
       padding: 1.5rem 1.25rem;
     }
@@ -104,12 +93,6 @@
       color: var(--gold);
     }
 
-    @media (min-width: 768px) {
-      .hero-title {
-        font-size: 3rem;
-      }
-    }
-
     .hero-text {
       font-size: 1.05rem;
       max-width: 32rem;
@@ -117,10 +100,17 @@
       color: rgba(250, 250, 255, 0.9);
     }
 
-    @media (min-width: 768px) {
-      .hero-text {
-        font-size: 1.15rem;
-      }
+    /* Timer Animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; }
+      50% { text-shadow: 0 0 20px #00ff9d, 0 0 30px #00ff9d, 0 0 40px #00ff9d; }
+      100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; }
     }
 
     .timer {
@@ -131,6 +121,7 @@
       border: 1px solid rgba(255, 255, 255, 0.15);
       background: linear-gradient(90deg, rgba(255, 215, 0, 0.08), rgba(0, 255, 157, 0.1));
       margin-bottom: 1.5rem;
+      animation: pulse 1.5s ease-in-out infinite, glow 2s ease-in-out infinite;
     }
 
     .timer-label {
@@ -154,8 +145,7 @@
       font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out,
-        background 0.12s ease-out;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
       width: 100%;
       max-width: 28rem;
       text-decoration: none;
@@ -207,6 +197,7 @@
       align-items: center;
     }
 
+    /* Trust Box */
     .trust-box-wrapper {
       display: flex;
       justify-content: center;
@@ -224,116 +215,10 @@
       text-align: center;
     }
 
-    .trust-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .trust-title {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-    }
-
-    .trust-title span {
-      color: var(--gold);
-    }
-
-    .trust-text {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .trust-emojis {
-      display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .trust-points {
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 0.75rem;
-      margin-top: 0.75rem;
-    }
-
-    .trust-point {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      margin-top: 0.35rem;
-    }
-
-    .trust-point span:first-child {
-      font-size: 1rem;
-    }
-
-    .trust-point.green {
-      color: var(--neon-green);
-    }
-    .trust-point.cyan {
-      color: var(--neon-cyan);
-    }
-    .trust-point.gold {
-      color: var(--gold);
-    }
-
     .activity-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    .activity-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-    }
-
-    .activity-title span {
-      color: var(--neon-green);
-    }
-
-    .activity-feed {
-      width: 100%;
-      max-width: 28rem;
-      background: rgba(10, 8, 24, 0.9);
-      border-radius: 1.25rem;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 1rem 1rem 1.2rem;
-      box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
-      font-size: 0.9rem;
-    }
-
-    .activity-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 0.15rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .activity-item:last-child {
-      border-bottom: none;
-    }
-
-    .activity-icon {
-      font-size: 1.1rem;
-    }
-
-    .activity-text {
-      flex: 1;
-      color: var(--fg);
-    }
-
-    .activity-time {
-      font-size: 0.75rem;
-      color: var(--muted);
-      white-space: nowrap;
     }
 
     footer {
@@ -358,127 +243,53 @@
       font-size: 0.7rem;
       color: rgba(163, 163, 181, 0.7);
     }
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes scale-in {
-      from {
-        opacity: 0;
-        transform: scale(0.96);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .fade-in {
-      animation: fade-in 0.5s ease-out forwards;
-    }
-
-    .scale-in {
-      animation: scale-in 0.35s ease-out forwards;
-    }
   </style>
 </head>
 <body>
   <div class="page">
     <!-- Header -->
     <header>
-      <!-- Logo: ersetze bonusradar-logo.jpg durch deinen Dateinamen -->
       <img src="bonusradar-logo.jpg" alt="BonusRadarDE Logo" class="logo fade-in" />
-      <p class="subtitle fade-in" style="animation-delay: 0.15s">
-        Deutschlands Radar für Boni
-      </p>
+      <p class="subtitle fade-in" style="animation-delay: 0.15s">Deutschlands Radar für Boni</p>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-    <h1 class="hero-title fade-in" style="animation-delay: 0.25s">
-  Beste Boni – <span>täglich aktualisiert</span>
-</h1>
-  <p class="hero-text fade-in" style="animation-delay: 0.35s">
-        Finde die besten Bonus-Angebote, Freispiele und Sportwetten-Boni an einem Ort.
-      </p>
+      <h1 class="hero-title fade-in" style="animation-delay: 0.25s">Beste Boni – <span>täglich aktualisiert</span></h1>
+      <p class="hero-text fade-in" style="animation-delay: 0.35s">Finde die besten Bonus-Angebote, Freispiele und Sportwetten-Boni an einem Ort.</p>
 
-      <!-- CountdownTimer -->
+      <!-- Countdown Timer -->
       <div class="timer fade-in" style="animation-delay: 0.45s">
         <div class="timer-label">Nächstes Bonus-Update in:</div>
         <div id="timer-value" class="timer-value">03:24:55</div>
       </div>
 
       <!-- Haupt-CTA -->
-      <a
-        href="#angebote"
-        class="btn btn-gold scale-in"
-        style="animation-delay: 0.55s"
-      >
-        Top-Bonus jetzt sichern
-
-       </a>
+      <a href="#angebote" class="btn btn-gold scale-in" style="animation-delay: 0.55s">Top-Bonus jetzt sichern</a>
     </section>
-    <!-- Button Grid -->
+
+    <!-- Button Grid (with clickable boxes) -->
     <section class="btn-grid">
-
- <a
-https://record.discasinoaffiliates.com/_0dbFz-WGDJYd2bMnnkYwymNd7ZgqdRLk/1/
-  ...
->
-  <span>🔥</span> 200% bis 5.000 € Startbonus
-</a>
-
-
- <a
-  href="https://yeok.pushed.click/c42dm7qc"
-  class="btn btn-green ..."
-  ...
->
-  <span>⚡</span> 200% bis 7.500 € + Cashback
-</a>
-
- <a
-  href="https://yeok.pushed.click/turafdrm"
-  class="btn btn-cyan ..."
-  ...
->
-  <span>🎁</span> 200% bis 5.000 € + 50 Freispiele
-</a>
-<a
-  href=https://yeok.pushed.click/pufsc1sc
-  class="btn btn-cyan ..."
-  ...
->
-  <span>🎁</span>  1.500 € + 250 Freispiele
-</a>
-
-</section>
-
-    <span>🎁</span>  1.500 € + 50 Freispiele
-         <a
- https://yeok.pushed.click/cmz2ih71
-     >
-  ...  
+      <a href="https://record.discasinoaffiliates.com/_0dbFz-WGDJbtDQIHKy9i5mNd7ZgqdRLk/1/" class="btn btn-gold">
+        <span>🔥</span> 200% bis 5.000 € Startbonus
+      </a>
+      <a href="https://yeok.pushed.click/c42dm7qc" class="btn btn-green">
+        <span>⚡</span> 200% bis 7.500 € + Cashback
+      </a>
+      <a href="https://yeok.pushed.click/turafdrm" class="btn btn-cyan">
+        <span>🎁</span> 200% bis 5.000 € + 50 Freispiele
+      </a>
+      <a href="https://yeok.pushed.click/pufsc1sc" class="btn btn-cyan">
+        <span>🎁</span> 1.500 € + 250 Freispiele
+      </a>
+    </section>
 
     <!-- Trust Box -->
     <section class="trust-box-wrapper" id="angebote">
       <div class="trust-box fade-in" style="animation-delay: 1.1s">
         <div class="trust-icon">💎</div>
-        <h2 class="trust-title">
-          <span>Premium</span> Deals
-        </h2>
-        <p class="trust-text">
-          Täglich neue Boni und Sportwetten-Angebote. Seriös, transparent und einfach zugänglich.
-        </p>
-
+        <h2 class="trust-title"><span>Premium</span> Deals</h2>
+        <p class="trust-text">Täglich neue Boni und Sportwetten-Angebote. Seriös, transparent und einfach zugänglich.</p>
         <div class="trust-emojis">
           <span>💎</span>
           <span>🪙</span>
@@ -486,42 +297,24 @@ https://record.discasinoaffiliates.com/_0dbFz-WGDJYd2bMnnkYwymNd7ZgqdRLk/1/
           <span>⚽</span>
           <span>🎁</span>
         </div>
-
         <div class="trust-points">
           <div class="trust-point green">
-            <span>✓</span>
-            <span>12.842 Nutzer diese Woche</span>
+            <span>✓</span> 12.842 Nutzer diese Woche
           </div>
           <div class="trust-point cyan">
-            <span>✓</span>
-            <span>Geprüfte Bonus-Angebote</span>
+            <span>✓</span> Geprüfte Bonus-Angebote
           </div>
           <div class="trust-point gold">
-            <span>✓</span>
-            <span>100 % sichere Weiterleitung</span>
+            <span>✓</span> 100 % sichere Weiterleitung
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Activity Feed -->
-    <section class="activity-section">
-      <h3 class="activity-title">
-        🔴 <span>Live</span> Aktivität
-      </h3>
-      <div class="activity-feed" id="activity-feed">
-        <!-- Einträge werden per JS gesetzt -->
-      </div>
-    </section>
-
     <!-- Footer -->
     <footer>
-      <p class="legal">
-        18+ | Glücksspiel kann süchtig machen. Spiele verantwortungsbewusst.
-      </p>
-      <p class="copy">
-        BonusRadarDE © 2025 | Alle Rechte vorbehalten.
-      </p>
+      <p class="legal">18+ | Glücksspiel kann süchtig machen. Spiele verantwortungsbewusst.</p>
+      <p class="copy">BonusRadarDE © 2025 | Alle Rechte vorbehalten.</p>
     </footer>
   </div>
 
@@ -550,97 +343,9 @@ https://record.discasinoaffiliates.com/_0dbFz-WGDJYd2bMnnkYwymNd7ZgqdRLk/1/
       tick();
       setInterval(tick, 1000);
     })();
-
-    // Activity Feed – fake Live-Events
-    (function () {
-      const feed = document.getElementById("activity-feed");
-      if (!feed) return;
-
-      const entries = [
-{
-          icon: "🔴",
-          text: "B••67 hat soeben einen Bonus aufgerufen",
-          ago: "vor 2 Minuten",
-        },
-
-        {
-          icon: "🟡",
-          text: "J••68 hat soeben einen Bonus aufgerufen",
-          ago: "vor 2 Minuten",
-        },
-        {
-          icon: "🔵",
-          text: "S••41 hat ein Angebot angesehen",
-          ago: "vor 5 Minuten",
-        },
-        {
-          icon: "🟣",
-          text: "M••99 hat ein VIP-Angebot geprüft",
-          ago: "vor 9 Minuten",
-        },
-        {
-          icon: "🟢",
-          text: "L••27 hat eine Sportwetten-Promo geöffnet",
-          ago: "vor 12 Minuten",
-        },
-        {
-          icon: "🟠",
-          text: "K••13 hat Freispiele angeklickt",
-          ago: "vor 18 Minuten",
-        },
-      ];
-
-      function renderList(list) {
-        feed.innerHTML = "";
-        list.forEach(function (item) {
-          const row = document.createElement("div");
-          row.className = "activity-item";
-
-          const icon = document.createElement("div");
-          icon.className = "activity-icon";
-          icon.textContent = item.icon;
-
-          const text = document.createElement("div");
-          text.className = "activity-text";
-          text.textContent = item.text;
-
-          const time = document.createElement("div");
-          time.className = "activity-time";
-          time.textContent = item.ago;
-
-          row.appendChild(icon);
-          row.appendChild(text);
-          row.appendChild(time);
-          feed.appendChild(row);
-        });
-      }
-
-      function shuffle(array) {
-        const arr = array.slice();
-        for (let i = arr.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-        return arr;
-      }
-
-      renderList(entries);
-
-      // alle 30 Sekunden neu “mischen”
-      setInterval(function () {
-        renderList(shuffle(entries));
-      }, 30000);
-    })();
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
