@@ -173,8 +173,18 @@
       box-shadow: 0 0 18px rgba(255, 75, 203, 0.55);
     }
 
+    /* Vibrating Effect */
+    @keyframes vibrate {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(5px); }
+    }
+
     .btn:hover {
-      transform: translateY(-1px) scale(1.01);
+      animation: vibrate 0.5s ease-in-out infinite;
+      transform: scale(1.05);
       box-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
     }
 
@@ -270,7 +280,8 @@
 
     <!-- Button Grid (with clickable boxes) -->
     <section class="btn-grid">
-      <a https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/>
+      <a href="https://record.discasinoaffiliates.com/_0dbFz-WGDJbtDQIHKy9i5mNd7ZgqdRLk/1/" class="btn btn-gold">
+        <span>🔥</span> 200% bis 5.000 € Startbonus
       </a>
       <a href="https://yeok.pushed.click/c42dm7qc" class="btn btn-green">
         <span>⚡</span> 200% bis 7.500 € + Cashback
@@ -345,6 +356,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
