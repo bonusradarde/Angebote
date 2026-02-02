@@ -2,28 +2,20 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="3cn-8T-bTTt9K1BbXcQ_y0duOKEBFhgXWoxMXAJyMNg" />
-  <title>BonusRadarDE – Beste Boni – täglich aktualisiert</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BonusRadarDE – Beste Boni – täglich aktualisiert</title>
   <style>
     :root {
       --bg: #04030a;
-      --bg-2: #090819;
       --fg: #fdfdfd;
       --muted: #a3a3b5;
-      --border: #2b2b3b;
       --gold: #ffd700;
       --neon-green: #00ff9d;
       --neon-cyan: #00e5ff;
       --neon-pink: #ff4bcb;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #18152f 0, #04030a 55%, #000 100%);
@@ -33,7 +25,6 @@
       justify-content: center;
       padding: 0;
     }
-
     .page {
       width: 100%;
       max-width: 900px;
@@ -43,260 +34,56 @@
       background: radial-gradient(circle at top, #18152f 0, #04030a 60%, #000 100%);
       overflow-x: hidden;
     }
+    img { max-width: 100%; display: block; }
+    header { display:flex; flex-direction:column; align-items:center; text-align:center; padding:3rem 1.25rem 1.5rem;}
+    .logo { width:8rem; height:8rem; margin-bottom:1rem; object-fit:contain; filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4)); }
+    .subtitle { font-size:1.05rem; max-width:32rem; color:var(--muted); }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    section { padding:1.5rem 1.25rem; }
+    .hero { display:flex; flex-direction:column; align-items:center; text-align:center; }
+    .hero-title { font-size:2.2rem; font-weight:900; letter-spacing:-0.03em; margin-bottom:1rem; }
+    .hero-title span { color:var(--gold); }
+    .hero-text { font-size:1.05rem; max-width:32rem; margin-bottom:1rem; color: rgba(250,250,255,0.9);}
+    .hero-subtext { font-size:1rem; margin-bottom:1.75rem; color:var(--gold); font-weight:600;}
 
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 3rem 1.25rem 1.5rem;
-    }
-
-    .logo {
-      width: 8rem;
-      height: 8rem;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
-      object-fit: contain;
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      max-width: 32rem;
-      color: var(--muted);
-    }
-
-    section {
-      padding: 1.5rem 1.25rem;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero-title {
-      font-size: 2.2rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-    }
-
-    .hero-title span {
-      color: var(--gold);
-    }
-
-    .hero-text {
-      font-size: 1.05rem;
-      max-width: 32rem;
-      margin-bottom: 1.75rem;
-      color: rgba(250, 250, 255, 0.9);
-    }
-
-    /* Timer Animation */
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes glow {
-      0% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; }
-      50% { text-shadow: 0 0 20px #00ff9d, 0 0 30px #00ff9d, 0 0 40px #00ff9d; }
-      100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700; }
-    }
-
+    @keyframes pulse {0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
     .timer {
-      font-family: "SF Mono", Menlo, Consolas, monospace;
-      font-size: 1rem;
-      padding: 0.75rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: linear-gradient(90deg, rgba(255, 215, 0, 0.08), rgba(0, 255, 157, 0.1));
-      margin-bottom: 1.5rem;
-      animation: pulse 1.5s ease-in-out infinite, glow 2s ease-in-out infinite;
+      font-family:"SF Mono", Menlo, Consolas, monospace;
+      font-size:1rem; padding:0.75rem 1.1rem; border-radius:999px; border:1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(90deg, rgba(255,215,0,0.08), rgba(0,255,157,0.1)); margin-bottom:1.5rem;
+      animation: pulse 1.5s ease-in-out infinite;
     }
-
-    .timer-label {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .timer-value {
-      font-size: 1.2rem;
-      letter-spacing: 0.08em;
-    }
+    .timer-label { font-size:0.85rem; color:var(--muted); margin-bottom:0.25rem; }
+    .timer-value { font-size:1.2rem; letter-spacing:0.08em; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
-      width: 100%;
-      max-width: 28rem;
-      text-decoration: none;
-      color: #050509;
-      margin: 0 auto;
+      display:inline-flex; align-items:center; justify-content:center; padding:0.85rem 1.2rem;
+      border-radius:999px; font-size:1rem; font-weight:600; border:none; cursor:pointer;
+      transition:transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
+      width:100%; max-width:28rem; text-decoration:none; color:#050509; margin:0 auto; margin-top:0.7rem;
     }
+    .btn span { margin-right:0.35rem; }
+    .btn-gold { background: radial-gradient(circle at top, #ffe46b,#ffd700); box-shadow:0 0 18px rgba(255,215,0,0.55);}
+    .btn-green { background: radial-gradient(circle at top, #00ffb5,#00d47b); box-shadow:0 0 18px rgba(0,255,157,0.55);}
+    .btn-cyan { background: radial-gradient(circle at top, #6af0ff,#00d0ff); box-shadow:0 0 18px rgba(0,229,255,0.55);}
+    .btn:hover { transform: scale(1.05); box-shadow:0 0 24px rgba(255,255,255,0.18);}
+    .btn:active { transform: scale(0.99); box-shadow:0 0 10px rgba(255,255,255,0.16); }
 
-    .btn-gold {
-      background: radial-gradient(circle at top, #ffe46b, #ffd700);
-      box-shadow: 0 0 18px rgba(255, 215, 0, 0.55);
-    }
+    .btn-grid { display:flex; flex-direction:column; align-items:center; }
+    .activity-section { display:flex; flex-direction:column; align-items:center; margin-top:2rem;}
+    .activity-title { font-size:1.3rem; margin-bottom:1rem;}
+    .activity-feed { display:flex; flex-direction:column; gap:0.75rem;}
+    .activity-item { display:flex; gap:0.5rem; font-size:0.95rem; }
+    footer { margin-top:auto; padding:2.5rem 1.25rem 2.5rem; text-align:center; border-top:1px solid rgba(255,255,255,0.12);}
+    footer .legal { font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem;}
+    footer .copy { font-size:0.7rem; color:rgba(163,163,181,0.7); }
 
-    .btn-green {
-      background: radial-gradient(circle at top, #00ffb5, #00d47b);
-      box-shadow: 0 0 18px rgba(0, 255, 157, 0.55);
-    }
-
-    .btn-cyan {
-      background: radial-gradient(circle at top, #6af0ff, #00d0ff);
-      box-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
-    }
-
-    .btn-pink {
-      background: radial-gradient(circle at top, #ff88e7, #ff4bcb);
-      box-shadow: 0 0 18px rgba(255, 75, 203, 0.55);
-    }
-
-    /* Vibrating Effect */
-    @keyframes vibrate {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-5px); }
-      100% { transform: translateX(5px); }
-    }
-
-    .btn:hover {
-      animation: vibrate 0.5s ease-in-out infinite;
-      transform: scale(1.05);
-      box-shadow: 0 0 24px rgba(255, 255, 255, 0.18);
-    }
-
-    .btn:active {
-      transform: translateY(0) scale(0.99);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.16);
-    }
-
-    .btn + .btn {
-      margin-top: 0.7rem;
-    }
-
-    .btn span {
-      margin-right: 0.35rem;
-    }
-
-    .btn-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Trust Box */
-    .trust-box-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    .trust-box {
-      width: 100%;
-      max-width: 28rem;
-      background: rgba(11, 9, 23, 0.9);
-      border-radius: 1.5rem;
-      border: 2px solid rgba(255, 215, 0, 0.35);
-      padding: 2.25rem 1.75rem;
-      box-shadow: 0 0 40px rgba(255, 215, 0, 0.35);
-      backdrop-filter: blur(10px);
-      text-align: center;
-    }
-
-    .activity-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 2.5rem 1.25rem 2.5rem;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    footer p {
-      max-width: 34rem;
-      margin: 0 auto;
-    }
-
-    footer .legal {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    footer .copy {
-      font-size: 0.7rem;
-      color: rgba(163, 163, 181, 0.7);
-    }
-
-    /* MOBILE-FRIENDLY (Responsive) */
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-
-      header {
-        padding: 2rem 1rem;
-      }
-
-      .hero-title {
-        font-size: 1.8rem;
-      }
-
-      .hero-text {
-        font-size: 1rem;
-      }
-
-      .btn {
-        font-size: 0.9rem;
-      }
-
-      .activity-item {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-      }
-
-      .activity-icon {
-        margin-bottom: 10px;
-      }
-
-      .activity-text {
-        font-size: 0.95rem;
-      }
-
-      .activity-time {
-        font-size: 0.8rem;
-      }
-
-      .activity-title {
-        font-size: 1.3rem;
-      }
+    @media (max-width:768px){
+      body{padding:10px;}
+      header{padding:2rem 1rem;}
+      .hero-title{font-size:1.8rem;}
+      .hero-text,.hero-subtext{font-size:1rem;}
+      .btn{font-size:0.9rem;}
     }
   </style>
 </head>
@@ -304,99 +91,61 @@
   <div class="page">
     <!-- Header -->
     <header>
-      <img src="bonusradar-logo.jpg" alt="BonusRadarDE Logo" class="logo fade-in" />
-      <p class="subtitle fade-in" style="animation-delay: 0.15s">Deutschlands Radar für Boni</p>
+      <img src="bonusradar-logo.jpg" alt="BonusRadarDE Logo" class="logo"/>
+      <p class="subtitle">Deutschlands Radar für Boni</p>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-      <h1 class="hero-title fade-in" style="animation-delay: 0.25s">Beste Boni – <span>täglich aktualisiert</span></h1>
-      <p class="hero-text fade-in" style="animation-delay: 0.35s">Finde die besten Bonus-Angebote, Freispiele und Sportwetten-Boni an einem Ort.</p>
+      <h1 class="hero-title">Beste Boni – <span>täglich aktualisiert</span></h1>
+      <p class="hero-text">Finde alle Top-Boni, Freispiele und Sportwetten-Angebote an einem Ort.</p>
+      <p class="hero-subtext">💰 Mindesteinzahlung: 50 € – Bonus sofort sichern!</p>
 
       <!-- Countdown Timer -->
-      <div class="timer fade-in" style="animation-delay: 0.45s">
-        <div class="timer-label">Nächstes Bonus-Update in:</div>
+      <div class="timer">
+        <div class="timer-label">Nur noch bis zum nächsten Bonus-Update:</div>
         <div id="timer-value" class="timer-value">03:24:55</div>
       </div>
 
       <!-- Haupt-CTA -->
-      <a href="#angebote" class="btn btn-gold scale-in" style="animation-delay: 0.55s">Top-Bonus jetzt sichern</a>
+      <a href="#angebote" class="btn btn-gold">🔥 Jetzt Bonus sichern – nur für kurze Zeit!</a>
     </section>
 
-    <!-- Button Grid (with clickable boxes) -->
+    <!-- Button Grid -->
     <section class="btn-grid">
-      <a href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/" class="btn btn-gold">
-        <span>🔥</span> 200% bis 5.000 € Startbonus
-      </a>
-      <a href="https://yeok.pushed.click/c42dm7qc" class="btn btn-green">
-        <span>⚡</span> 200% bis 7.500 € + Cashback
-      </a>
-      <a href="https://yeok.pushed.click/turafdrm" class="btn btn-cyan">
-        <span>🎁</span> 200% bis 5.000 € + 50 Freispiele
-      </a>
-      <a href="https://yeok.pushed.click/pufsc1sc" class="btn btn-cyan">
-        <span>🎁</span> 1.500 € + 250 Freispiele
-      </a>
+      <a href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/" class="btn btn-gold">🔥 200% bis 5.000 € – ab 50 € Einzahlung</a>
+      <a href="https://yeok.pushed.click/c42dm7qc" class="btn btn-green">⚡ 200% bis 7.500 € + Cashback – ab 50 € Einzahlung</a>
+      <a href="https://yeok.pushed.click/turafdrm" class="btn btn-cyan">🎁 200% bis 5.000 € + 50 Freispiele – ab 50 € Einzahlung</a>
+      <a href="https://yeok.pushed.click/pufsc1sc" class="btn btn-cyan">🎁 1.500 € + 250 Freispiele – ab 50 € Einzahlung</a>
     </section>
 
-    <!-- Activity Feed (mit fiktiven Namen) -->
+    <!-- Activity Feed -->
     <section class="activity-section">
-      <h3 class="activity-title">🔴 <span>Live</span> Aktivität</h3>
-      <div class="activity-feed" id="activity-feed">
-        <div class="activity-item">
-          <div class="activity-icon">🔴</div>
-          <div class="activity-text">Tim aus Berlin hat gerade den Bonus eingelöst</div>
-          <div class="activity-time">vor 2 Minuten</div>
-        </div>
-        <div class="activity-item">
-          <div class="activity-icon">🟡</div>
-          <div class="activity-text">Julia aus Hamburg hat Freispiele aktiviert</div>
-          <div class="activity-time">vor 5 Minuten</div>
-        </div>
-        <div class="activity-item">
-          <div class="activity-icon">🟢</div>
-          <div class="activity-text">Lukas aus München hat 7.500 € Cashback aktiviert</div>
-          <div class="activity-time">vor 10 Minuten</div>
-        </div>
-        <div class="activity-item">
-          <div class="activity-icon">🟣</div>
-          <div class="activity-text">Sarah aus Frankfurt hat 50 Freispiele erhalten</div>
-          <div class="activity-time">vor 15 Minuten</div>
-        </div>
+      <h3 class="activity-title">🔴 Live Aktivität</h3>
+      <div class="activity-feed">
+        <div class="activity-item">🔴 Tim aus Berlin hat gerade 50 € eingezahlt und Bonus aktiviert!</div>
+        <div class="activity-item">🟡 Julia aus Hamburg sicherte sich 50 € Freispiele!</div>
+        <div class="activity-item">🟢 Lukas aus München aktivierte 7.500 € Cashback!</div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p class="legal">18+ | Glücksspiel kann süchtig machen. Spiele verantwortungsbewusst.</p>
-      <p class="copy">BonusRadarDE © 2025 | Alle Rechte vorbehalten.</p>
+      <p class="legal">18+ | Glücksspiel kann süchtig machen. Spiele verantwortungsbewusst. Mindesteinzahlung: 50 €</p>
+      <p class="copy">BonusRadarDE ©️ 2025 | Alle Rechte vorbehalten.</p>
     </footer>
   </div>
 
   <script>
-    // Einfacher Countdown: z. B. 4 Stunden Loop
-    (function () {
+    (function(){
       const el = document.getElementById("timer-value");
-      if (!el) return;
-
-      const DURATION = 4 * 60 * 60; // 4 Stunden in Sekunden
+      if(!el) return;
+      const DURATION = 4*60*60;
       let remaining = DURATION;
-
-      function format(sec) {
-        const h = String(Math.floor(sec / 3600)).padStart(2, "0");
-        const m = String(Math.floor((sec % 3600) / 60)).padStart(2, "0");
-        const s = String(sec % 60).padStart(2, "0");
-        return h + ":" + m + ":" + s;
-      }
-
-      function tick() {
-        el.textContent = format(remaining);
-        remaining--;
-        if (remaining < 0) remaining = DURATION;
-      }
-
+      function format(sec){ const h=String(Math.floor(sec/3600)).padStart(2,"0"); const m=String(Math.floor((sec%3600)/60)).padStart(2,"0"); const s=String(sec%60).padStart(2,"0"); return h+":"+m+":"+s; }
+      function tick(){ el.textContent=format(remaining); remaining--; if(remaining<0) remaining=DURATION;}
       tick();
-      setInterval(tick, 1000);
+      setInterval(tick,1000);
     })();
   </script>
 </body>
