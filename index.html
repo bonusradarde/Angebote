@@ -3,19 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BonusRadarDE – Beste Boni – täglich aktualisiert</title>
+  <meta name="description" content="Finde täglich die besten Casino-Boni, Freispiele und Sportwetten. Bis zu 7.500€ Bonus!" />
+  <title>BonusRadar – Beste Boni – täglich aktualisiert</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTPEWWMZLD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CTPEWWMZLD');
+  </script>
+
   <style>
     :root {
       --bg: #04030a;
+      --bg-2: #090819;
       --fg: #fdfdfd;
       --muted: #a3a3b5;
+      --border: #2b2b3b;
       --gold: #ffd700;
       --neon-green: #00ff9d;
       --neon-cyan: #00e5ff;
       --neon-pink: #ff4bcb;
     }
 
-    * { box-sizing: border-box; margin:0; padding:0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #18152f 0, #04030a 55%, #000 100%);
@@ -23,134 +37,265 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 0;
     }
+
     .page {
       width: 100%;
       max-width: 900px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background: radial-gradient(circle at top, #18152f 0, #04030a 60%, #000 100%);
-      overflow-x: hidden;
     }
-    img { max-width: 100%; display: block; }
-    header { display:flex; flex-direction:column; align-items:center; text-align:center; padding:3rem 1.25rem 1.5rem;}
-    .logo { width:8rem; height:8rem; margin-bottom:1rem; object-fit:contain; filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4)); }
-    .subtitle { font-size:1.05rem; max-width:32rem; color:var(--muted); }
 
-    section { padding:1.5rem 1.25rem; }
-    .hero { display:flex; flex-direction:column; align-items:center; text-align:center; }
-    .hero-title { font-size:2.2rem; font-weight:900; letter-spacing:-0.03em; margin-bottom:1rem; }
-    .hero-title span { color:var(--gold); }
-    .hero-text { font-size:1.05rem; max-width:32rem; margin-bottom:1rem; color: rgba(250,250,255,0.9);}
-    .hero-subtext { font-size:1rem; margin-bottom:1.75rem; color:var(--gold); font-weight:600;}
+    header {
+      position: relative;
+      text-align: center;
+      padding: 3rem 1.25rem 1.25rem;
+    }
 
-    @keyframes pulse {0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: 1px solid #ffd700;
+      color: #ffd700;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    .logo {
+      width: 8rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title span { color: var(--gold); }
+
+    .hero-text {
+      font-size: 1.05rem;
+      margin-bottom: 1.1rem;
+      color: var(--fg);
+    }
+
+    .trust {
+      margin: 0.75rem auto 1.2rem;
+      max-width: 32rem;
+      text-align: left;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .trust li { margin: 0.35rem 0; }
+
     .timer {
-      font-family:"SF Mono", Menlo, Consolas, monospace;
-      font-size:1rem; padding:0.75rem 1.1rem; border-radius:999px; border:1px solid rgba(255,255,255,0.15);
-      background: linear-gradient(90deg, rgba(255,215,0,0.08), rgba(0,255,157,0.1)); margin-bottom:1.5rem;
-      animation: pulse 1.5s ease-in-out infinite;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      padding: 0.75rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      margin: 0.8rem auto 1.2rem;
+      max-width: 26rem;
     }
-    .timer-label { font-size:0.85rem; color:var(--muted); margin-bottom:0.25rem; }
-    .timer-value { font-size:1.2rem; letter-spacing:0.08em; }
+
+    .timer small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
     .btn {
-      display:inline-flex; align-items:center; justify-content:center; padding:0.85rem 1.2rem;
-      border-radius:999px; font-size:1rem; font-weight:600; border:none; cursor:pointer;
-      transition:transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
-      width:100%; max-width:28rem; text-decoration:none; color:#050509; margin:0 auto; margin-top:0.7rem;
+      display: block;
+      margin: 0.6rem auto;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #050509;
+      max-width: 28rem;
     }
-    .btn span { margin-right:0.35rem; }
-    .btn-gold { background: radial-gradient(circle at top, #ffe46b,#ffd700); box-shadow:0 0 18px rgba(255,215,0,0.55);}
-    .btn-green { background: radial-gradient(circle at top, #00ffb5,#00d47b); box-shadow:0 0 18px rgba(0,255,157,0.55);}
-    .btn-cyan { background: radial-gradient(circle at top, #6af0ff,#00d0ff); box-shadow:0 0 18px rgba(0,229,255,0.55);}
-    .btn:hover { transform: scale(1.05); box-shadow:0 0 24px rgba(255,255,255,0.18);}
-    .btn:active { transform: scale(0.99); box-shadow:0 0 10px rgba(255,255,255,0.16); }
 
-    .btn-grid { display:flex; flex-direction:column; align-items:center; }
-    .activity-section { display:flex; flex-direction:column; align-items:center; margin-top:2rem;}
-    .activity-title { font-size:1.3rem; margin-bottom:1rem;}
-    .activity-feed { display:flex; flex-direction:column; gap:0.75rem;}
-    .activity-item { display:flex; gap:0.5rem; font-size:0.95rem; }
-    footer { margin-top:auto; padding:2.5rem 1.25rem 2.5rem; text-align:center; border-top:1px solid rgba(255,255,255,0.12);}
-    footer .legal { font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem;}
-    footer .copy { font-size:0.7rem; color:rgba(163,163,181,0.7); }
-
-    @media (max-width:768px){
-      body{padding:10px;}
-      header{padding:2rem 1rem;}
-      .hero-title{font-size:1.8rem;}
-      .hero-text,.hero-subtext{font-size:1rem;}
-      .btn{font-size:0.9rem;}
+    .btn-gold {
+      background: radial-gradient(circle at top, #ffe46b, #ffd700);
     }
+
+    .sub-offer {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2rem 1.25rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    [data-lang] { display: none; }
   </style>
 </head>
+
 <body>
   <div class="page">
-    <!-- Header -->
+
     <header>
-      <img src="bonusradar-logo.jpg" alt="BonusRadarDE Logo" class="logo"/>
-      <p class="subtitle">Deutschlands Radar für Boni</p>
+      <div class="lang-switch">
+        <button type="button" onclick="setLanguage('de')">🇩🇪</button>
+        <button type="button" onclick="setLanguage('en')">🇬🇧</button>
+      </div>
+
+      <img src="bonusradar-logo.jpg" class="logo" alt="BonusRadar Logo" loading="lazy" />
+
+      <p class="subtitle" data-lang="de">Deutschlands Radar für Boni</p>
+      <p class="subtitle" data-lang="en">Germany’s Radar for Casino Bonuses</p>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1 class="hero-title">Beste Boni – <span>täglich aktualisiert</span></h1>
-      <p class="hero-text">Finde alle Top-Boni, Freispiele und Sportwetten-Angebote an einem Ort.</p>
-      <p class="hero-subtext">💰 Mindesteinzahlung: 50 € – Bonus sofort sichern!</p>
+    <section>
+      <h1 class="hero-title" data-lang="de">Geprüfte Casino-Boni – <span>täglich aktualisiert</span></h1>
+      <h1 class="hero-title" data-lang="en">Verified Casino Bonuses – <span>Updated Daily</span></h1>
 
-      <!-- Countdown Timer -->
+      <p class="hero-text" data-lang="de">Echtgeld getestet. Keine unseriösen Anbieter. Eine klare Empfehlung – ein Klick.</p>
+      <p class="hero-text" data-lang="en">Real-money tested. No shady platforms. One clear pick – one click.</p>
+
+      <ul class="trust" data-lang="de">
+        <li>✔ Bonusbedingungen geprüft</li>
+        <li>✔ Echtgeld getestet</li>
+        <li>✔ Regelmäßig aktualisiert</li>
+      </ul>
+
+      <ul class="trust" data-lang="en">
+        <li>✔ Bonus terms checked</li>
+        <li>✔ Real deposit tested</li>
+        <li>✔ Updated regularly</li>
+      </ul>
+
       <div class="timer">
-        <div class="timer-label">Nur noch bis zum nächsten Bonus-Update:</div>
-        <div id="timer-value" class="timer-value">03:24:55</div>
+        <small data-lang="de">Bonusbedingungen können sich ändern – nächstes Update in:</small>
+        <small data-lang="en">Bonus terms can change anytime – next update in:</small>
+        <div id="timer-value">03:59:59</div>
       </div>
 
-      <!-- Haupt-CTA -->
-      <a href="#angebote" class="btn btn-gold">🔥 Jetzt Bonus sichern – nur für kurze Zeit!</a>
+      <!-- HERO CTA (FTD top offer) -->
+      <a
+        data-lang="de"
+        class="btn btn-gold"
+        href="https://yeok.pushed.click/c42dm7qc?utm_source=landing&utm_medium=hero&utm_campaign=de"
+        onclick="safeGtag('event','click',{event_category:'CTA',event_label:'Hero FTD DE'});"
+      >🔥 Top-Bonus sichern</a>
+
+      <a
+        data-lang="en"
+        class="btn btn-gold"
+        href="https://yeok.pushed.click/c42dm7qc?utm_source=landing&utm_medium=hero&utm_campaign=en"
+        onclick="safeGtag('event','click',{event_category:'CTA',event_label:'Hero FTD EN'});"
+      >🔥 Claim top bonus</a>
     </section>
 
-    <!-- Button Grid -->
-    <section class="btn-grid">
-      <a href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/" class="btn btn-gold">🔥 200% bis 5.000 € – ab 50 € Einzahlung</a>
-      <a href="https://yeok.pushed.click/c42dm7qc" class="btn btn-green">⚡ 200% bis 7.500 € + Cashback – ab 50 € Einzahlung</a>
-      <a href="https://yeok.pushed.click/turafdrm" class="btn btn-cyan">🎁 200% bis 5.000 € + 50 Freispiele – ab 50 € Einzahlung</a>
+    <section id="offers">
+      <!-- Secondary offer: RevShare (35%) -->
+      <a
+        data-lang="de"
+        class="btn btn-gold"
+        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/?utm_source=landing&utm_medium=offer_revshare&utm_campaign=de"
+        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'RevShare 35 DE'});"
+      >💰 RevShare Deal (35%)</a>
+      <div class="sub-offer" data-lang="de">Für langfristige Value-Spieler (Lifetime Revenue).</div>
+
+      <a
+        data-lang="en"
+        class="btn btn-gold"
+        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/?utm_source=landing&utm_medium=offer_revshare&utm_campaign=en"
+        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'RevShare 35 EN'});"
+      >💰 RevShare deal (35%)</a>
+      <div class="sub-offer" data-lang="en">For long-term value players (lifetime revenue).</div>
+
+      <p style="margin-top:1rem;color:#ffd700;" data-lang="de">Hinweis: Mindesteinzahlung kann gelten (z.B. 50 €).</p>
+      <p style="margin-top:1rem;color:#ffd700;" data-lang="en">Note: A minimum deposit may apply (e.g. €50).</p>
     </section>
 
-    <!-- Activity Feed -->
-    <section class="activity-section">
-      <h3 class="activity-title">🔴 Live Aktivität</h3>
-      <div class="activity-feed">
-        <div class="activity-item">🔴 Tim aus Berlin hat gerade 50 € eingezahlt und Bonus aktiviert!</div>
-        <div class="activity-item">🟡 Julia aus Hamburg sicherte sich 50 € Freispiele!</div>
-        <div class="activity-item">🟢 Lukas aus München aktivierte 7.500 € Cashback!</div>
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-      <p class="legal">18+ | Glücksspiel kann süchtig machen. Spiele verantwortungsbewusst. Mindesteinzahlung: 50 €</p>
-      <p class="copy">BonusRadarDE ©️ 2025 | Alle Rechte vorbehalten.</p>
+      <p data-lang="de">18+ | Glücksspiel kann süchtig machen. Spiele verantwortungsbewusst.</p>
+      <p data-lang="en">18+ | Gambling can be addictive. Play responsibly.</p>
+
+      <p style="margin-top:0.6rem;">
+        <a href="/impressum.html">Impressum</a> | <a href="/datenschutz.html">Datenschutz</a>
+      </p>
     </footer>
+
   </div>
 
   <script>
-    (function(){
+    // Safe GA wrapper (prevents errors if GA blocked/not loaded)
+    function safeGtag() {
+      try {
+        if (typeof gtag === "function") gtag.apply(null, arguments);
+      } catch (e) {}
+    }
+
+    function getLangFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const lang = params.get("lang");
+      return (lang === "de" || lang === "en") ? lang : null;
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      document.documentElement.setAttribute("lang", lang);
+
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
+      });
+
+      safeGtag('event', 'language_switch', { language: lang });
+    }
+
+    // Init language: URL param overrides localStorage
+    const urlLang = getLangFromUrl();
+    const defaultLang = urlLang || localStorage.getItem("lang") || "de";
+    setLanguage(defaultLang);
+
+    // Countdown (4h loop)
+    (function () {
       const el = document.getElementById("timer-value");
-      if(!el) return;
-      const DURATION = 4*60*60;
-      let remaining = DURATION;
-      function format(sec){ const h=String(Math.floor(sec/3600)).padStart(2,"0"); const m=String(Math.floor((sec%3600)/60)).padStart(2,"0"); const s=String(sec%60).padStart(2,"0"); return h+":"+m+":"+s; }
-      function tick(){ el.textContent=format(remaining); remaining--; if(remaining<0) remaining=DURATION;}
-      tick();
-      setInterval(tick,1000);
+      let remaining = 4 * 60 * 60;
+      setInterval(() => {
+        const h = String(Math.floor(remaining / 3600)).padStart(2,"0");
+        const m = String(Math.floor((remaining % 3600) / 60)).padStart(2,"0");
+        const s = String(remaining % 60).padStart(2,"0");
+        el.textContent = `${h}:${m}:${s}`;
+        remaining = remaining <= 0 ? 4 * 60 * 60 : remaining - 1;
+      }, 1000);
     })();
   </script>
 </body>
 </html>
-
-
 
 
 
