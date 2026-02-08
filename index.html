@@ -18,14 +18,9 @@
   <style>
     :root {
       --bg: #04030a;
-      --bg-2: #090819;
       --fg: #fdfdfd;
       --muted: #a3a3b5;
-      --border: #2b2b3b;
       --gold: #ffd700;
-      --neon-green: #00ff9d;
-      --neon-cyan: #00e5ff;
-      --neon-pink: #ff4bcb;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -61,8 +56,8 @@
 
     .lang-switch button {
       background: none;
-      border: 1px solid #ffd700;
-      color: #ffd700;
+      border: 1px solid var(--gold);
+      color: var(--gold);
       padding: 6px 10px;
       border-radius: 6px;
       cursor: pointer;
@@ -129,19 +124,23 @@
     .btn {
       display: block;
       margin: 0.6rem auto;
-      padding: 0.85rem 1.2rem;
+      padding: 0.9rem 1.2rem;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
       color: #050509;
       max-width: 28rem;
-    }
-
-    .btn-gold {
       background: radial-gradient(circle at top, #ffe46b, #ffd700);
     }
 
-    .sub-offer {
+    .btn small {
+      display: block;
+      font-weight: 700;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .offer-note {
       font-size: 0.9rem;
       color: var(--muted);
       margin-top: 0.25rem;
@@ -178,66 +177,76 @@
     </header>
 
     <section>
-      <h1 class="hero-title" data-lang="de">Geprüfte Casino-Boni – <span>täglich aktualisiert</span></h1>
-      <h1 class="hero-title" data-lang="en">Verified Casino Bonuses – <span>Updated Daily</span></h1>
+      <h1 class="hero-title" data-lang="de">Beste Boni – <span>täglich aktualisiert</span></h1>
+      <h1 class="hero-title" data-lang="en">Best Bonuses – <span>Updated Daily</span></h1>
 
-      <p class="hero-text" data-lang="de">Echtgeld getestet. Keine unseriösen Anbieter. Eine klare Empfehlung – ein Klick.</p>
-      <p class="hero-text" data-lang="en">Real-money tested. No shady platforms. One clear pick – one click.</p>
+      <p class="hero-text" data-lang="de">Geprüfte Angebote. Klare Bedingungen. Ein Klick zum Top-Bonus.</p>
+      <p class="hero-text" data-lang="en">Verified offers. Clear terms. One click to the top bonus.</p>
 
       <ul class="trust" data-lang="de">
-        <li>✔ Bonusbedingungen geprüft</li>
-        <li>✔ Echtgeld getestet</li>
+        <li>✔ Bonusbedingungen verständlich</li>
+        <li>✔ Keine unseriösen Anbieter</li>
         <li>✔ Regelmäßig aktualisiert</li>
       </ul>
 
       <ul class="trust" data-lang="en">
-        <li>✔ Bonus terms checked</li>
-        <li>✔ Real deposit tested</li>
+        <li>✔ Bonus terms explained</li>
+        <li>✔ No shady platforms</li>
         <li>✔ Updated regularly</li>
       </ul>
 
       <div class="timer">
-        <small data-lang="de">Bonusbedingungen können sich ändern – nächstes Update in:</small>
-        <small data-lang="en">Bonus terms can change anytime – next update in:</small>
+        <small data-lang="de">Nächstes Bonus-Update in:</small>
+        <small data-lang="en">Next bonus update in:</small>
         <div id="timer-value">03:59:59</div>
       </div>
 
-      <!-- HERO CTA (FTD top offer) -->
+      <!-- HERO CTA = FTD (Top Offer) -->
       <a
         data-lang="de"
-        class="btn btn-gold"
+        class="btn"
         href="https://yeok.pushed.click/c42dm7qc?utm_source=landing&utm_medium=hero&utm_campaign=de"
-        onclick="safeGtag('event','click',{event_category:'CTA',event_label:'Hero FTD DE'});"
-      >🔥 Top-Bonus sichern</a>
+        onclick="safeGtag('event','click',{event_category:'CTA',event_label:'Hero Offer2 DE'});"
+      >
+        ⚡ 200% bis 7.500 € + Cashback
+        <small>ab 50 € Einzahlung</small>
+      </a>
 
       <a
         data-lang="en"
-        class="btn btn-gold"
+        class="btn"
         href="https://yeok.pushed.click/c42dm7qc?utm_source=landing&utm_medium=hero&utm_campaign=en"
-        onclick="safeGtag('event','click',{event_category:'CTA',event_label:'Hero FTD EN'});"
-      >🔥 Claim top bonus</a>
+        onclick="safeGtag('event','click',{event_category:'CTA',event_label:'Hero Offer2 EN'});"
+      >
+        ⚡ 200% up to €7,500 + cashback
+        <small>min. €50 deposit</small>
+      </a>
+
+      <div class="offer-note" data-lang="de">Klick → Bonus sichern → Bedingungen im Casino prüfen.</div>
+      <div class="offer-note" data-lang="en">Click → claim bonus → check terms on the casino site.</div>
     </section>
 
     <section id="offers">
-      <!-- Secondary offer: RevShare (35%) -->
+      <!-- Secondary Offer = RevShare link behind the scenes, but user-facing bonus copy -->
       <a
         data-lang="de"
-        class="btn btn-gold"
-        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/?utm_source=landing&utm_medium=offer_revshare&utm_campaign=de"
-        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'RevShare 35 DE'});"
-      >💰 RevShare Deal (35%)</a>
-      <div class="sub-offer" data-lang="de">Für langfristige Value-Spieler (Lifetime Revenue).</div>
+        class="btn"
+        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/?utm_source=landing&utm_medium=offer1&utm_campaign=de"
+        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'Offer1 DE'});"
+      >
+        🔥 200% bis 5.000 € + 50 Freispiele
+        <small>ab 50 € Einzahlung</small>
+      </a>
 
       <a
         data-lang="en"
-        class="btn btn-gold"
-        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/?utm_source=landing&utm_medium=offer_revshare&utm_campaign=en"
-        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'RevShare 35 EN'});"
-      >💰 RevShare deal (35%)</a>
-      <div class="sub-offer" data-lang="en">For long-term value players (lifetime revenue).</div>
-
-      <p style="margin-top:1rem;color:#ffd700;" data-lang="de">Hinweis: Mindesteinzahlung kann gelten (z.B. 50 €).</p>
-      <p style="margin-top:1rem;color:#ffd700;" data-lang="en">Note: A minimum deposit may apply (e.g. €50).</p>
+        class="btn"
+        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/?utm_source=landing&utm_medium=offer1&utm_campaign=en"
+        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'Offer1 EN'});"
+      >
+        🔥 200% up to €5,000 + 50 free spins
+        <small>min. €50 deposit</small>
+      </a>
     </section>
 
     <footer>
@@ -252,11 +261,8 @@
   </div>
 
   <script>
-    // Safe GA wrapper (prevents errors if GA blocked/not loaded)
     function safeGtag() {
-      try {
-        if (typeof gtag === "function") gtag.apply(null, arguments);
-      } catch (e) {}
+      try { if (typeof gtag === "function") gtag.apply(null, arguments); } catch (e) {}
     }
 
     function getLangFromUrl() {
@@ -268,20 +274,16 @@
     function setLanguage(lang) {
       localStorage.setItem("lang", lang);
       document.documentElement.setAttribute("lang", lang);
-
       document.querySelectorAll("[data-lang]").forEach(el => {
         el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
       });
-
       safeGtag('event', 'language_switch', { language: lang });
     }
 
-    // Init language: URL param overrides localStorage
     const urlLang = getLangFromUrl();
     const defaultLang = urlLang || localStorage.getItem("lang") || "de";
     setLanguage(defaultLang);
 
-    // Countdown (4h loop)
     (function () {
       const el = document.getElementById("timer-value");
       let remaining = 4 * 60 * 60;
@@ -296,14 +298,4 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
+  
