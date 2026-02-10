@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Find the best casino bonuses, free spins, and sports betting offers daily />
-  <title>BonusRadar – Best Bonuses – updatet daily </title>
+  <meta name="description" content="Find the best casino bonuses, free spins, and sports betting offers daily." />
+  <title>BonusRadar – Best Bonuses – Updated Daily</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTPEWWMZLD"></script>
@@ -43,25 +43,8 @@
     }
 
     header {
-      position: relative;
       text-align: center;
       padding: 3rem 1.25rem 1.25rem;
-    }
-
-    .lang-switch {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
-
-    .lang-switch button {
-      background: none;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-left: 4px;
     }
 
     .logo {
@@ -91,7 +74,6 @@
     .hero-text {
       font-size: 1.05rem;
       margin-bottom: 1.1rem;
-      color: var(--fg);
     }
 
     .trust {
@@ -106,7 +88,7 @@
     .trust li { margin: 0.35rem 0; }
 
     .timer {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-family: ui-monospace, monospace;
       padding: 0.75rem 1.2rem;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.15);
@@ -118,19 +100,24 @@
       display: block;
       color: var(--muted);
       margin-bottom: 0.25rem;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     .btn {
       display: block;
-      margin: 0.6rem auto;
-      padding: 0.9rem 1.2rem;
+      margin: 1rem auto;
+      padding: 1rem 1.2rem;
       border-radius: 999px;
       font-weight: 800;
       text-decoration: none;
       color: #050509;
       max-width: 28rem;
       background: radial-gradient(circle at top, #ffe46b, #ffd700);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,215,0,0.3);
     }
 
     .btn small {
@@ -156,8 +143,6 @@
 
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-
-    [data-lang] { display: none; }
   </style>
 </head>
 
@@ -165,51 +150,48 @@
   <div class="page">
 
     <header>
-      <div class="lang-switch">
-        <button type="button" onclick="setLanguage('en')">🇬🇧</button>
-      </div>
-
       <img src="bonusradar-logo.jpg" class="logo" alt="BonusRadar Logo" loading="lazy" />
-      <p class="subtitle" data-lang="en">Europe’s Radar for Casino Bonuses</p>
+      <p class="subtitle">Europe’s Radar for Casino Bonuses</p>
     </header>
 
     <section>
-      <h1 class="hero-title" data-lang="en">Best Bonuses – <span>Updated Daily</span></h1>
+      <h1 class="hero-title">Best Bonuses – <span>Updated Daily</span></h1>
+      <p class="hero-text">Verified offers. Clear terms. One click to the top bonus.</p>
 
-      <p class="hero-text" data-lang="en">Verified offers. Clear terms. One click to the top bonus.</p>
-
-     
-      <ul class="trust" data-lang="en">
+      <ul class="trust">
         <li>✔ Bonus terms explained</li>
         <li>✔ No shady platforms</li>
         <li>✔ Updated regularly</li>
       </ul>
 
       <div class="timer">
-        <small data-lang="en">Next bonus update in:</small>
+        <small>Next bonus update in:</small>
         <div id="timer-value">03:59:59</div>
       </div>
 
-      <div class="offer-note" data-lang="en">Click → claim bonus → check terms on the casino site.</div>
+      <div class="offer-note">
+        Click → claim bonus → check terms on the casino site.
+      </div>
     </section>
 
     <section id="offers">
-      <!-- Secondary Offer = RevShare link behind the scenes, but user-facing bonus copy -->
-        data-lang="en"
+      <a
         class="btn"
-        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJZ8YAuMxhPI-WNd7ZgqdRLk/1/?utm_source=landing&utm_medium=offer1&utm_campaign=en"
+        href="https://record.discasinoaffiliates.com/_0dbFz-WGDJbqGbWJzh_uYWNd7ZgqdRLk/1/"
+        target="_blank"
+        rel="noopener noreferrer"
         onclick="safeGtag('event','click',{event_category:'Offer',event_label:'Offer1 EN'});"
       >
         🔥 200% up to €5,000 + 50 free spins
-        <small>min. €50 deposit</small>
+        <small>Min. €50 deposit</small>
       </a>
     </section>
 
     <footer>
-      <p data-lang="en">18+ | Gambling can be addictive. Play responsibly.</p>
-
+      <p>18+ | Gambling can be addictive. Play responsibly.</p>
       <p style="margin-top:0.6rem;">
-<a href="/imprint.html">Imprint</a> | <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/imprint.html">Imprint</a> |
+        <a href="/privacy-policy.html">Privacy Policy</a>
       </p>
     </footer>
 
@@ -220,28 +202,10 @@
       try { if (typeof gtag === "function") gtag.apply(null, arguments); } catch (e) {}
     }
 
-    function getLangFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      const lang = params.get("lang");
-      return (lang === "de" || lang === "en") ? lang : null;
-    }
-
-    function setLanguage(lang) {
-      localStorage.setItem("lang", lang);
-      document.documentElement.setAttribute("lang", lang);
-      document.querySelectorAll("[data-lang]").forEach(el => {
-        el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
-      });
-      safeGtag('event', 'language_switch', { language: lang });
-    }
-
-    const urlLang = getLangFromUrl();
-    const defaultLang = urlLang || localStorage.getItem("lang") || "de";
-    setLanguage(defaultLang);
-
     (function () {
       const el = document.getElementById("timer-value");
       let remaining = 4 * 60 * 60;
+
       setInterval(() => {
         const h = String(Math.floor(remaining / 3600)).padStart(2,"0");
         const m = String(Math.floor((remaining % 3600) / 60)).padStart(2,"0");
@@ -251,7 +215,7 @@
       }, 1000);
     })();
   </script>
+
 </body>
 </html>
-  
 
