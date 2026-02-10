@@ -120,6 +120,11 @@
       box-shadow: 0 6px 20px rgba(255,215,0,0.3);
     }
 
+    .btn.secondary {
+      background: radial-gradient(circle at top, #e7e7f2, #bdbdd6);
+      color: #0b0b12;
+    }
+
     .btn small {
       display: block;
       font-weight: 700;
@@ -127,10 +132,21 @@
       margin-top: 0.25rem;
     }
 
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--fg);
+    }
+
     .offer-note {
       font-size: 0.9rem;
       color: var(--muted);
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
     }
 
     footer {
@@ -174,17 +190,39 @@
       </div>
     </section>
 
+    <!-- OFFERS -->
     <section id="offers">
+
+      <!-- TOP PICK DACH -->
+      <div class="badge">TOP PICK (DACH)</div>
       <a
         class="btn"
+        href="https://yeok.pushed.click/c42dm7qc"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'Offer1 DACH 200% up to 7500'});"
+      >
+        💎 200% Welcome Bonus up to €7,500
+        <small>€50 minimum deposit • Germany / Austria / Switzerland</small>
+      </a>
+
+      <!-- ALTERNATIVE INTERNATIONAL -->
+      <div class="badge" style="opacity:.85;">ALTERNATIVE</div>
+      <a
+        class="btn secondary"
         href="https://record.discasinoaffiliates.com/_0dbFz-WGDJbqGbWJzh_uYWNd7ZgqdRLk/1/"
         target="_blank"
         rel="noopener noreferrer"
-        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'Offer1 EN'});"
+        onclick="safeGtag('event','click',{event_category:'Offer',event_label:'Offer2 INT 200% + FS'});"
       >
-        🔥 200% up to €5,000 + 50 free spins
+        🔥 200% up to €5,000 + 50 Free Spins
         <small>Min. €50 deposit</small>
       </a>
+
+      <p class="offer-note">
+        Best for DE/AT/CH traffic. Use the alternative if the top offer is unavailable.
+      </p>
+
     </section>
 
     <footer>
@@ -218,4 +256,3 @@
 
 </body>
 </html>
-
